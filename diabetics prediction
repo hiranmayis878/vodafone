@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class DiabetesPrediction {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Gather input features (you may need more relevant features)
+        System.out.print("Enter glucose level: ");
+        double glucoseLevel = scanner.nextDouble();
+
+        System.out.print("Enter BMI: ");
+        double bmi = scanner.nextDouble();
+
+        // You can add more features like blood pressure, age, etc.
+
+        // Make a simple prediction based on conditions
+        boolean isDiabetic = predictDiabetes(glucoseLevel, bmi);
+
+        // Display the prediction
+        if (isDiabetic) {
+            System.out.println("There is a chance of diabetes.");
+        } else {
+            System.out.println("Low chance of diabetes.");
+        }
+    }
+
+    // Simple prediction based on conditions (you may need a more sophisticated model)
+    private static boolean predictDiabetes(double glucoseLevel, double bmi) {
+        // You can define your own conditions based on research or data
+        return (glucoseLevel > 140 && bmi > 30);
+    }
+}
